@@ -1,8 +1,16 @@
-import { initCloseHandler } from "../handlers/closeHandler.js";
-import { initWebhookHandler } from "../handlers/webhookHandler.js";
+import nextcord
+from nextcord.ext import commands
+from src.config.env import ADMIN_ROLE_IDS
+from src.handlers.close_handler import close_order  # Import your close handler function
 
-// Initialize handlers that rely on messageCreate
-export const initMessageCreate = () => {
-  initCloseHandler();
-  initWebhookHandler();
-};
+bot = commands.Bot(command_prefix="!")
+
+@bot.event
+async def on_message(message):
+    # Ignore bots
+    if message.author.bot:
+        return
+
+    # Handle !close command
+    if message.content.lower().startswith("!close"):
+        await close_order(message)  # Pass message to your handler
