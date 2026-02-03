@@ -39,4 +39,6 @@ bot.add_listener(interaction_create.on_interaction)
 # Run Bot
 # ----------------------
 print("🔹 Starting Discord Bot...")
+from src.keep_alive import keep_alive
+keep_alive()
 bot.run(DISCORD_TOKEN)
