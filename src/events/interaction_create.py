@@ -4,7 +4,7 @@ from src.handlers.claim_handler import claim_callback
 from src.handlers.close_handler import close_order  # Optional if needed
 from src.config.constants import CLAIM_BUTTON, DECLINE_BUTTON
 
-bot = nextcord.Bot()  # Replace with your main bot instance
+from index import bot  # use the bot instance from index.py
 
 @bot.event
 async def on_interaction(interaction: Interaction):
