@@ -1,4 +1,3 @@
-export const BUTTONS = {
-  CLAIM: "order_claim",
-  DECLINE: "order_decline"
-};
+# Button custom IDs
+CLAIM_BUTTON = "claim"
+DECLINE_BUTTON = "decline"
