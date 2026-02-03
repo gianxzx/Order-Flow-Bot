@@ -1,1 +1,4 @@
-
+nextcord==2.5.0
+python-dotenv
+supabase
+flask
